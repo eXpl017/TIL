@@ -1,0 +1,25 @@
+EMAIL
+emails are easy to use way of messaging. they read headers and identify from, to etc. and then theres double new lines which tells that next part is a body. eof tells where the body ends.
+emails can only send data in nvt 7 bit ascii format, and hence there isnt a way in emails to send files of other formats like images/audio. there was another header added which tells that the body
+can be processed as well. mime stands for multimedia internet mail extentions.
+
+nvt 7 bit ascii format : this is just a subset of the ascii format and consists of 95 ascii graphic characters + 4 (null, tab, backspace, enter)
+
+
+COMPRESSION
+a way of reducing the amout of info without losing any of it, and in principle, be able to recover it completely.
+essentially compression works by looking for patterns, repetaations, and predictability.
+eg.: a file with a phrase used over and over again can be sent once with the positions it is used at from a starting point at reference.
+an image of sky and desert can send the detials of the pixel only once and then specify till where and what postion are they required.
+JPEG is a form of lossy compression, i.e, the original image cannnot be reformed after deconpressing it, there will be loss of quality (when zoomed in).
+
+entropy in compression : min no. of bits to send given data can be given by calculating entropy
+I = -log (probability)
+entropy = average self info = sum(prob*info)
+eg. 4 letters in language, a,s,d,f and prob of occurance is 1/4 each. entropy = (1/4)*2 + (1/4)*2 + (1/4)*2 + (1/4)*2 = 2
+can represent info in 2 bits, 00,01,10,11
+now prob is changed to 1/2,1/4,1/8,1/8. enttropy = 1.75
+can represent info as 0,10,110,111
+*important to note that when reading info, even if the info is not read completely yet but the already read part has matched something, theen it will be considered as that info itself and not the info intended.
+thats why we dont use 101 or 01 here as 10 and 0 are both already infering to something.
+
