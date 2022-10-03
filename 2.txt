@@ -1,0 +1,27 @@
+ip addresses are limited -> no. of computers increasing -> NAT used
+
+NAT (network address translation)
+----------------------------------
+100 computers in a network. gateway is assumed 128.254.1.1. cannot give 100 adresses to 100 computers so we give them private addresses.
+there is a mapping table created, which takes ip add. and combines it with some info from the tcp layer, i.e the port number. 
+if i am sending request from my computer from port 3221, the mapper will map (ip add. : port no.) of my machine to the (ip add.: port no.)
+of the gateway. one port number will be assigned for one machine and the ip address will be the same. ip add. of router will be public and
+visible on the internet while the computers will have a private ip and can only be communicated through the gateway.
+
+this makes the ssytem less robust as if gateway is down, no other way to tranlate the response back to specific machine or even be communicate 
+to that machine in any way as its not visible.
+also, the layers of the stack arent all abstract, and hence raises the question about NAT being a good way as there could not be a proper
+distinction between public and private ips. it even raise question about integrity as the info inside the packet is being changed on the fly.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+ERROR DETECTION AND CORRECTION
+-------------------------------
+parity bit added to detect is error occured or not. even parity is added to make the number of 1s even. odd parity added when number of 1s is 
+odd. drawback is that if there are two bit errors or more then we can not be sure about error occurance.
+if there is an error, send NAK (not acknowledge), otherwise ACK. make ack and nak to be of two bits each so that there is error detection for 
+them too.
+
+Hamming code: 
+redundant bits : redundant bits are added with the data bits to ensure that no bits are lost during tranfer.
+no. of redudant bits required can be calculated by : 2^r >= m+r+1 where r is no. of redundant bits and m is no. of data bits
