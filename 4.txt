@@ -1,0 +1,35 @@
+FLOATING POINT NUMBERS
+-----------------------
+we learn mathematics in base 10, but for the computer, everything is in base 2.
+for a human, 1/3 + 2/3 = 3/3 = 1, as we can clearly see and add those fractions. but for the computer, it will first comvert it to binary 
+and then add those numbers. this would give the same result if the decimal point numbers are terminating, but there are other numbers 
+which dont terminate and also which recur.
+a 32 bit computer can only store 23 digits after decimal point (mantissa), so it will have to truncate the recussing part or maybe 
+approximate. because of this, both 1/3 and 2/3 would not add up to 3/3 but something else. hence, we get a different answer.
+
+===========================================================================================================================================
+
+A comment on P-NP problems explains the difference and why computer scientists think that (P != NP)
+
+"Okay, so they are kind of on the right track with P-NP, and actually gave a clearer, more accurate statement but it was fragmented throughout the video.
+Let's take a simple question that pops up very often in the real world: lets say I have a sheet of cloth, and I have a set of stencils that will punch out shapes to make shirts. 
+Seems easy enough: just arrange the stencils so they don't overlap. That is a P problem. 
+
+Now here is where the "hard" part comes in: I want you to find the most efficient way of punching out those shapes that is mathematically possible. 
+Then the question becomes difficult for a sequential machine like a computer. We humans may be able to cleverly notice patterns, but computers have no such luxury (yet!). 
+The computer's solution is to essentially try every arrangement possible until it finds the most efficient, because, unfortunately, there is no mathematical way of finding the 
+most efficient arrangement. However, that example is actually known as NP-Hard, because NP problems have the property that if you claim to know the answer, it can be easily checked. 
+
+What makes this problem one step higher, or NPH, is that one cannot give an arrangement that the computer can easily check. The factoring question he mentioned 
+(what are the factors of a 100 digit number) is truly NP because one can check if the given factors equal that number very easily.
+
+Now onto what "hard to solve" means. The time a certain process takes is incredibly important to computer efficiency.  A problem is difficult if it takes a long time to solve, 
+while easy ones can be solved quickly. What "Polynomial" and "non-deterministic polynomial" mean is simply whether the time to solve the question is something like x^3 (P) or x^n (NP).
+As you can tell, the polynomial in P problems is a constant for that question; it's always 3 or 4 or some other real number. NP problems, however, have changing polynomials as in the
+x^n example, making it non-deterministic aka variable. Just looking at small numbers, something like 3^3 to 4^3 is a difference of 37, while 3^3 to 3^4 is a difference of 54.
+NP problems' time to solve get long very quickly.
+
+The reason most CS-s believe P =/= NP is because of something called NP-complete. NP-complete questions are those that if we find a way to get one into polynomial time, whether it be
+through a trick or new math, then ALL NP problems can be reduced to P. The whole punching out shapes is considered NPC. The reason NPC problems are the core of this question is 
+because every single NPC problem you can conceive can be reduced to this type of question. It's known as a traveling salesman problem, where one is trying to find the most efficient
+set of decisions. All NPC problems are, at their core, a traveling salesman problem."
