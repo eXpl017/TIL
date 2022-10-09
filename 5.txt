@@ -1,0 +1,25 @@
+NTP
+---
+NTP, network time protocol, was designed to syncronize time over the network.
+first, there are highly accurate clocks on the first layer. these clocks have the stratum value of 0. stratum value defines the distance 
+from the reference clock. 0-15 is the range which is considered reliable. any value of stratum above 15 means accuracy is not trustworthy.
+the reference clocks are connected to primary time servers, which have stratum 1. udp port used is 123.
+
+
+AMPLIFIED DOS ATTACKS:
+----------------------
+there is a command in ntp, "monlist" which sends the data of the last 600 people who requested time from this server. as the protocol works
+on udp, spoofing the ip address is easy. so, for this attack, one can spoof target ip and send this command and that would send a huge 
+amount of data to the target, cause a DOS. usually done as DDOS.
+
+
+HOW SMARTPHONE KNOW LOCATION
+-----------------------------
+the location is simply found out using the formula (distance = speed of signal * time). signal is eletromagnetic so speed is speed of light.
+as the speed is so high, time much be incredibly accurate to find distance. 
+atomic enery is constrained to a precise set of levels, ie, if an atom jumps from one energy level to another, the energy diff is equal to a
+characteristic freq, multiplied by constant (planks const.).
+△E = hv
+cesium 133 has a clock frq of 9192631770 Hz. so, 1 second is defined as that many times the oscilations of cesium 133 atom.
+this provides presicion of a billionth of a second. hence, with help of a minimum of 4 satellites, and a bit of General Theory of Relativity,
+the exact location can be pinpointed.
