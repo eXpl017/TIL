@@ -1,0 +1,27 @@
+PUBLIC KEY CRYPTOGRAPHY
+------------------------
+the most basic way of encrypting with a key is using a single key agreed upon by both sender and receiver. but it has drawbacks, how to tell one another 
+about the key? it is inconvinient. so, we use public key cryto. 
+in this, eveyone hass two keys, one public and one private. the public key is out there known to everyone that this is your public key, while the provate 
+is a secret only with you. simple way of encryptingis that you encode the message with the reciever's public key and then sen it to them where they can 
+decrypt it with their private key. this way one doesnt ahve to agree on keys.
+to make this even more secure and trustworthy, the sender can encrypt the message with his private key, then on top of that encrypt that whole thing with
+recievers public key. when the reciever gets it, he can decryot it first with his private key, which is to make sure that no one else can read the message,
+and then decrypt again using the senders public key, which ensure that the message is legit and trusted to be from the sender and also has not been tampered
+with on its way.
+
+
+SHELLSHOCK ATTACK
+------------------
+shells are an important part of linux systems. these shells use what are called environment variables. these are name value variables defined outside a 
+program to be referenced or used later by a program. any number of it can be defined. these variables' values can be changed for a program and those values 
+are passed down to any child process as it is. 
+now, while defining variables, we can make it as a function, but there is a bug in unix shell which allows you to run a command which is written outside the
+function but inside the variable.
+example:
+env helo ="() { echo hello there; }; echo hello there" bash
+				       /|\
+					|
+					|
+			this is a part of the variable but runs when the variable is set.
+so, if a process uses this variable, any code could be run from here, could even give root reverese shell if the user is set root.
