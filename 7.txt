@@ -1,0 +1,27 @@
+GPU vs CPU
+-----------
+gpu, as we all know, is predominantly used for graphics. but why? the main reason for that is that GPUs are good at a few things,
+in fact better than CPUs at those tasks, such as, calculating bulk loads of data (millions of pixels and then which comes in front 
+of what and which is visible to user), dealing with floating point numbers (when doing calculations for graphics, we use floating 
+points numbers mainly), calculating in parallel (gpus are slower when calculating a less number of floating point numbers but when
+its a large amount like a million then gpus are faster than cpus), matrix calculation.
+
+Botnets
+--------
+botnets are infected computers with malware code in it which is controlled by C2 (command and control) servers by an attacker. this 
+malicious code is called bot binary, and doesnt need to compile or the user to double click it. the user achines can get infected by
+active or passive ways, active involve user assistance whereas passsive dont, such as drive-by-downloads. the bot knows its C2 
+server using a few ways, it could be hardcodedin the code (ip address of server) or it could have a seed list of ips which know how
+to connect to the server. usually not all the bots connect to the server directly as that would cause a DoS on it and so they connect
+to other bots which relay the info or there are different servers managing different amounts of these bots and in the end being
+controlled by attacker.
+
+Misc
+----
+usually when a webpage is loaded, the main html may be received from the sever but that server isnt the one putting those ads there. 
+so that means that there is another request goign to an ad server for the ads to be there. if a site is hosting some other sites ads,
+then that site pays this one for it. but the payment is only according to how many customers have seen those ads from this site, 
+i.e., how many requests have gone for the display of the ads. now, is the user is using an ad blocker, then those blockers usually 
+block that initial request from going, and hence the ad not loading, and the page owner losing potential money that way. also, the 
+ISP can see these requests (unless not encrypted) and then change the location of that request, hence making something else been shown.
+
